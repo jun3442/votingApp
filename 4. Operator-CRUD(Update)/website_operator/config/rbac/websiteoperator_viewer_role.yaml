@@ -1,0 +1,27 @@
+# permissions for end users to view websiteoperators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: websiteoperator-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: website-operator
+    app.kubernetes.io/part-of: website-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: websiteoperator-viewer-role
+rules:
+- apiGroups:
+  - operator.example.com
+  resources:
+  - websiteoperators
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operator.example.com
+  resources:
+  - websiteoperators/status
+  verbs:
+  - get
