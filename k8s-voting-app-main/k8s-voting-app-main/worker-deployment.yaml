@@ -16,4 +16,5 @@ spec:
     spec:
       containers:
       - image: dockersamples/examplevotingapp_worker
+        imagePullPolicy: IfNotPresent
         name: worker
