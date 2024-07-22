@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: postgres:9.4
+        imagePullPolicy: IfNotPresent
         name: postgres
         env:
         - name: POSTGRES_USER
