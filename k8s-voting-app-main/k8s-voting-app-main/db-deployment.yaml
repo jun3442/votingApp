@@ -15,7 +15,7 @@ spec:
         app: db
     spec:
       containers:
-      - image: nginx:latest
+      - image: postgres:bullseye
         imagePullPolicy: IfNotPresent
         name: postgres
         env:
